@@ -52,6 +52,8 @@ python login_window.py
 
     Enjoy!
 
+---
+
 ## 📂 File Structure
 
 - database.py          # Database operations (Users, Movies, Reviews)
@@ -62,6 +64,8 @@ python login_window.py
 - movies.csv           # Sample movie data
 - README.md            # Project information
 
+---
+
 ## 📌 Important Notes
 
    - Before running the application, make sure movies.csv is available in the project folder.
@@ -69,6 +73,8 @@ python login_window.py
    - If you want to add your own movies, simply edit or replace movies.csv before running setup_database.py.
 
    - Passwords are stored in plain text for simplicity. In a real-world application, always hash passwords!
+
+---
 
 ## ✨ Future Improvements
 
