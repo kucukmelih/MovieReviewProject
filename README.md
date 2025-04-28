@@ -52,30 +52,30 @@ python login_window.py
 
     Enjoy!
 
-📂 File Structure
+## 📂 File Structure
 
-database.py          # Database operations (Users, Movies, Reviews)
-login_window.py      # Login and Registration GUI
-main_menu.py         # Main menu after login (view movies, add reviews)
-session.py           # Session management (store current user info)
-setup_database.py    # Initial database setup (create tables, load CSV)
-movies.csv           # Sample movie data
-README.md            # Project information
+- database.py          # Database operations (Users, Movies, Reviews)
+- login_window.py      # Login and Registration GUI
+- main_menu.py         # Main menu after login (view movies, add reviews)
+- session.py           # Session management (store current user info)
+- setup_database.py    # Initial database setup (create tables, load CSV)
+- movies.csv           # Sample movie data
+- README.md            # Project information
 
-📌 Important Notes
+## 📌 Important Notes
 
-    Before running the application, make sure movies.csv is available in the project folder.
+   - Before running the application, make sure movies.csv is available in the project folder.
 
-    If you want to add your own movies, simply edit or replace movies.csv before running setup_database.py.
+   - If you want to add your own movies, simply edit or replace movies.csv before running setup_database.py.
 
-    Passwords are stored in plain text for simplicity. In a real-world application, always hash passwords!
+   - Passwords are stored in plain text for simplicity. In a real-world application, always hash passwords!
 
-✨ Future Improvements
+## ✨ Future Improvements
 
-    Add password hashing
+   - Add password hashing
 
-    Allow users to edit or delete their reviews
+   - Allow users to edit or delete their reviews
 
-    Better GUI design with Tkinter themes
+   - Better GUI design with Tkinter themes
 
-    Search/filter movies
+   - Search/filter movies
