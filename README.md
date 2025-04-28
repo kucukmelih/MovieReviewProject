@@ -1,43 +1,38 @@
-Movie Review App 🎬
+# Movie Review Project 🎬
 
-A simple movie review application built with Python and Tkinter.
+A simple movie review application built with Python and Tkinter.  
 Users can register, login, view movies, and leave reviews.
-📦 Features
 
-    User registration and login
+---
 
-    View movie list
+## 📦 Features
 
-    View detailed movie information
+- User registration and login
+- View movie list
+- View detailed movie information
+- Add and view movie reviews
+- Average movie rating calculation
 
-    Add and view movie reviews
+---
 
-    Average movie rating calculation
+## 🛠️ Technologies
 
-🛠️ Technologies
+- Python 3
+- Tkinter (GUI)
+- SQLite3 (Database)
 
-    Python 3
+---
 
-    Tkinter (GUI)
-
-    SQLite3 (Database)
-
-🚀 Setup and Installation
+## 🚀 Setup and Installation
 
 Follow these steps to set up and run the project:
 
-    Clone the repository:
+1. **Clone the repository:**
 
-git clone https://github.com/your-username/MovieReviewApp.git
-cd MovieReviewApp
-
-Install required libraries (optional, because you only need tkinter and sqlite3, which are usually pre-installed with Python):
-
-pip install -r requirements.txt
-
-(If you don't create requirements.txt, bunu atlayabiliriz.)
-
-Prepare the database:
+```bash
+git clone https://github.com/your-username/MovieReviewProject.git
+cd MovieReviewProject
+    Prepare the database:
 
     Run the setup script to create the database and tables:
 
@@ -49,11 +44,11 @@ python setup_database.py
 
         Load sample movies from movies.csv.
 
-Start the application:
+    Start the application:
 
     Launch the login window:
 
-    python login_window.py
+python login_window.py
 
     Enjoy!
 
