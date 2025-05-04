@@ -205,3 +205,79 @@ def get_username_by_id(user_id):
         return result[0]
     else:
         return "Unknown"
+    
+## Ekstra Ozellikler ##
+
+# Film adına göre arama
+def search_movies_by_title(search_term):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT id, title FROM Movies
+        WHERE title LIKE ?
+    """, ('%' + search_term + '%',))
+    results = cursor.fetchall()
+    conn.close()
+    return results
+
+# Yeni film ekleyebilme
+def add_movie(title, year, certificate, runtime, genre, imdb_rating, overview, meta_score, director, star1, star2, star3, star4, votes, gross):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO Movies (title, year, certificate, runtime, genre, imdb_rating, overview, meta_score, director, star1, star2, star3, star4, votes, gross)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (title, year, certificate, runtime, genre, imdb_rating, overview, meta_score, director, star1, star2, star3, star4, votes, gross))
+    conn.commit()
+    conn.close()
+
+# Yorum düzenleme
+def update_review(user_id, movie_id, new_rating, new_comment):
+    conn = get_connection()
+    cursor = conn.cursor()
+    date_now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    cursor.execute("""
+        UPDATE Reviews
+        SET rating=?, comment=?, date=?
+        WHERE user_id=? AND movie_id=?
+    """, (new_rating, new_comment, date_now, user_id, movie_id))
+    conn.commit()
+    conn.close()
+
+# Yorum silme
+def delete_review(user_id, movie_id):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        DELETE FROM Reviews
+        WHERE user_id=? AND movie_id=?
+    """, (user_id, movie_id))
+    conn.commit()
+    conn.close()
+
+# Genre (tür) filtresi ile filmleri listeleme
+def get_movies_by_genre(genre):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT id, title FROM Movies
+        WHERE genre LIKE ?
+    """, ('%' + genre + '%',))
+    movies = cursor.fetchall()
+    conn.close()
+    return movies
+
+# Ortalama puana göre filmleri sıralama
+def get_movies_ordered_by_rating():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT Movies.id, Movies.title, AVG(Reviews.rating) as avg_rating
+        FROM Movies
+        LEFT JOIN Reviews ON Movies.id = Reviews.movie_id
+        GROUP BY Movies.id
+        ORDER BY avg_rating DESC NULLS LAST
+    """)
+    movies = cursor.fetchall()
+    conn.close()
+    return movies
