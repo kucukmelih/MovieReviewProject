@@ -2,7 +2,7 @@
 # 🎬 Movie Review Project
 
 A simple movie review application built with Python and Tkinter.  
-Users can register, login, view movies, and leave reviews.
+Users can register, login, view movies, leave reviews, and get movie recommendations.
 
 ---
 
@@ -13,6 +13,7 @@ Users can register, login, view movies, and leave reviews.
 - View detailed movie information
 - Add and view movie reviews
 - Calculate and display average movie ratings
+- Personalized movie recommendations based on user reviews
 
 ---
 
@@ -53,7 +54,7 @@ This will:
 Launch the login window:
 
 ```bash
-python login_window.py
+python app.py
 ```
 
 Enjoy!
@@ -62,13 +63,19 @@ Enjoy!
 
 ## 📂 File Structure
 
-- `database.py` – Database operations (Users, Movies, Reviews)
-- `login_window.py` – Login and Registration GUI
-- `main_menu.py` – Main menu after login (view movies, add reviews)
-- `session.py` – Session management (store current user info)
-- `setup_database.py` – Initial database setup (create tables, load CSV)
-- `movies.csv` – Sample movie data
-- `README.md` – Project information
+- `app.py` – The main entry point of the program, starts the application.
+- `colors.py` – sColors for UI Design.
+- `database.py` – Handles database connections and basic queries (Users, Movies, Reviews).
+- `login_window.py` – GUI for user login and registration.
+- `main_menu.py` – Main menu GUI after login (movie list, add reviews, access recommendations).
+- `model.py` – Machine learning model and similarity calculations for the recommendation system.
+- `movie_details.py` – Window and functions to display detailed movie information.
+- `recommendations.py` – GUI and logic for the recommendation system.
+- `session.py` – Session management storing current user information.
+- `setup_database.py` – Creates the database and loads data from the `movies.csv` file.
+- `movies.csv` – CSV file containing movie data.
+- `movies.db` – SQLite database file (created by `setup_database.py`).
+- `README.md` – Project documentation and usage instructions.
 
 ---
 
@@ -78,6 +85,7 @@ Enjoy!
 - If you want to add your own movies, simply edit or replace `movies.csv` before running `setup_database.py`.
 - Passwords are currently stored in plain text for simplicity.  
   ➔ **In a real-world application, always hash passwords!**
+- The recommendation system uses user reviews to suggest movies similar to those the user liked.
 
 ---
 
@@ -87,3 +95,6 @@ Enjoy!
 - Allow users to edit or delete their reviews
 - Improve GUI design with Tkinter themes
 - Add search and filter functionality for movies
+- Enhance recommendation algorithm with more advanced techniques
+
+---

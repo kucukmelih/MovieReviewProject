@@ -1,7 +1,7 @@
-# Login olan kullanıcının bilgilerini tutar.
+# Stores information about the currently logged-in user
 
-# ID'sini tutar
+# Stores the user's ID
 current_user_id = None
 
-# Kullanıcı adını (username) tutar
+# Stores the user's username
 current_username = None
